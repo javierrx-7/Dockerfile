@@ -1,0 +1,14 @@
+services:
+ asir_apachedf:
+    container_name: dockerfile_apache
+    image: javier98/apache:web
+    ports:
+     - 80:80
+    volumes:
+     - ./web_sitio:/usr/local/apache2/htdocs  
+    networks:
+      bind33_subnet:
+        ipv4_address: 172.28.5.19
+networks:
+  bind33_subnet: 
+    external: true
